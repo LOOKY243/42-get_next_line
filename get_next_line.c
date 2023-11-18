@@ -6,7 +6,7 @@
 /*   By: gmarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:41:45 by gmarre            #+#    #+#             */
-/*   Updated: 2023/11/17 12:05:29 by gmarre           ###   ########.fr       */
+/*   Updated: 2023/11/18 06:52:27 by gad              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -69,6 +69,7 @@ char	*new_extra(char	*buff)
 	int		i;
 	int		j;
 
+	i = 0;
 	while (buff[i] && buff[i] != '\n')
 		i++;
 	if (buff[i] == '\n')
