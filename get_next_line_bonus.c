@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:32:47 by gmarre            #+#    #+#             */
-/*   Updated: 2023/11/20 17:21:48 by gmarre           ###   ########.fr       */
+/*   Updated: 2023/11/20 17:22:50 by gmarre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -100,15 +100,15 @@ static char	*new_extra(char *extra)
 
 char	*get_next_line(int fd)
 {
-	static char	*extra;
+	static char	*extra[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	extra = get_extra(fd, extra);
-	if (!extra)
+	extra[fd] = get_extra(fd, extra[fd]);
+	if (!extra[fd])
 		return (NULL);
-	line = get_line(extra);
-	extra = new_extra(extra);
+	line = get_line(extra[fd]);
+	extra[fd] = new_extra(extra[fd]);
 	return (line);
 }
