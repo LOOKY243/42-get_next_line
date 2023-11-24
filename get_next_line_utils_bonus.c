@@ -6,10 +6,10 @@
 /*   By: gmarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 11:06:24 by gmarre            #+#    #+#             */
-/*   Updated: 2023/11/20 16:00:13 by gmarre           ###   ########.fr       */
+/*   Updated: 2023/11/24 10:28:39 by gad              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char const *str)
 {

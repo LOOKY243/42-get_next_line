@@ -6,11 +6,10 @@
 /*   By: gmarre <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:32:47 by gmarre            #+#    #+#             */
-/*   Updated: 2023/11/20 17:22:50 by gmarre           ###   ########.fr       */
+/*   Updated: 2023/11/24 10:28:46 by gad              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "get_next_line.h"
-#include <string.h>
+#include "get_next_line_bonus.h"
 
 static char	*get_extra(int fd, char *extra)
 {
@@ -34,7 +33,7 @@ static char	*get_extra(int fd, char *extra)
 		tmp = ft_strjoin(extra, buff);
 		free(extra);
 		extra = tmp;
-		if (strchr(extra, '\n'))
+		if (ft_strchr(extra, '\n'))
 			break ;
 	}
 	free(buff);
